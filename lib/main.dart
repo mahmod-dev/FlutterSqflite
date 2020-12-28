@@ -35,7 +35,7 @@ class MyStatefull extends State<MyApp> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     Future<List<Task>> map = dbHelper.getAllTasks();
     map.then((value) {
-      //Provider.of<Task>(context, listen: false).setList(value);
+      Provider.of<Task>(context, listen: false).setList(value);
     });
 
     return Provider(
