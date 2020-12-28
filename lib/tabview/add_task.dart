@@ -67,7 +67,8 @@ class MyState extends State<AddTask> {
                             ));
                             return;
                           }
-                          var task = Task(title, 0);
+                          var task = Task();
+                          task.setValue(title, 0);
 
                           if (await DbHelper.db.insertTask(task) > 0) {
                             Navigator.pushAndRemoveUntil(
